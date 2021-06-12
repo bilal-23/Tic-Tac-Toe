@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { calculateWinner } from '../helper';
 import Square from './Sqaure';
 import GameFinished from './GameFinished';
@@ -6,7 +6,7 @@ import GameFinished from './GameFinished';
 const Board = () => {
     const [squares, setSquares] = useState(Array(9).fill(null));
     const [xIsNext, setXisNext] = useState(true);
-    const [showModal, setShowModal] = useState(false);
+
 
 
 

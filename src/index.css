@@ -15,6 +15,11 @@ body {
   margin: 20px;
   background-color: rgb(249, 251, 252);
 }
+.app {
+  height: 90vh;
+  display: grid;
+  grid-template-rows: 20% 70% 10%;
+}
 
 .heading {
   font-size: 5rem;
@@ -183,6 +188,11 @@ body {
 .reset-btn:hover::after {
   top: 0px;
   left: 0px;
+}
+.footer {
+  width: 100%;
+  text-align: right;
+  align-self: flex-end;
 }
 
 @media only screen and (max-width: 600px) {
