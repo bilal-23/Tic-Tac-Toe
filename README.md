@@ -54,12 +54,6 @@ Once your server has started, go to this url `http://localhost:8080/` and you wi
   <img src="https://github.com/bilal-23/Tic-Tac-Toe/blob/master/examples/example-2.jpg" alt="TicTacToe" width="30%">
 </h2>
 <h2 align="center">
-  <img src="https://github.com/bilal-23/Tic-Tac-Toe/blob/master/examples/example-3.jpg" alt="TicTacToe" width="30%">
-</h2>
-<h2 align="center">
-  <img src="https://github.com/bilal-23/Tic-Tac-Toe/blob/master/examples/example-4.jpg" alt="TicTacToe" width="30%">
-</h2>
-<h2 align="center">
   <img src="https://github.com/bilal-23/Tic-Tac-Toe/blob/master/examples/example-5.jpg" alt="TicTacToe" width="30%">
 </h2>
 
