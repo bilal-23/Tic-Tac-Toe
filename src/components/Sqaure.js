@@ -1,8 +1,17 @@
 
+
 const Square = (props) => {
+    const classes = props.value === 'X' ? 'redSign' : 'blueSign';
+
+    const squareClickHandler = () => {
+        props.onClick(props.id);
+    }
+
     return (
-        <button className="square">
-            {props.value}
+        <button className="square" onClick={squareClickHandler}>
+            <p className={classes}>
+                {props.value}
+            </p>
         </button>
     )
 }

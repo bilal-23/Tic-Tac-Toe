@@ -1,14 +1,44 @@
+import { useEffect, useState } from 'react';
+import { calculateWinner } from '../helper';
 import Square from './Sqaure';
+import GameFinished from './GameFinished';
 
 const Board = () => {
-    const renderSquare = (i) => {
-        return <Square />;
+    const [squares, setSquares] = useState(Array(9).fill(null));
+    const [xIsNext, setXisNext] = useState(true);
+    const [showModal, setShowModal] = useState(false);
+
+
+
+    const squareClickHandler = (i) => {
+
+        if (calculateWinner(squares) || squares[i]) {
+            return;
+        }
+
+        const updatedSquares = [...squares];
+        updatedSquares[i] = xIsNext ? 'X' : 'O';
+        setXisNext(prevState => !prevState);
+        setSquares(updatedSquares);
     }
-    const status = 'Next Player : X';
+
+
+    const allSquareFilled = (squares.every(q => q !== null));
+
+    const renderSquare = (i) => {
+
+        return <Square id={i} value={squares[i]} onClick={squareClickHandler} />;
+    }
+
+    const resetHandler = () => {
+        setSquares(Array(9).fill(null));
+    }
+
+    const winner = (calculateWinner(squares));
+    const status = winner && `${winner} Wins`;
 
     return (
-        <div>
-            <div className="status">{status}</div>
+        <div className="board">
             <div className="board-row">
                 {renderSquare(0)}
                 {renderSquare(1)}
@@ -24,6 +54,9 @@ const Board = () => {
                 {renderSquare(7)}
                 {renderSquare(8)}
             </div>
+
+            {winner && <GameFinished onClick={resetHandler} winner={winner} />}
+            {!winner && allSquareFilled && <GameFinished onClick={resetHandler} winner="tied" />}
         </div>
     );
 };

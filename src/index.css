@@ -1,60 +1,186 @@
-body {
+*,
+*::after,
+*::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
+  font: "Century Gothic", Futura, sans-serif;
+  font-size: 2rem;
   margin: 20px;
+  background-color: rgb(249, 251, 252);
 }
 
-ol,
-ul {
-  padding-left: 30px;
+.heading {
+  font-size: 5rem;
+  font-weight: 400;
+  background: -webkit-linear-gradient(rgb(28, 97, 202), rgb(26, 189, 230));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 3rem;
+}
+
+.board-row {
+  display: flex;
 }
 
 .status {
-  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 2rem;
+  margin: 1rem;
+  opacity: 0.4;
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
+  margin: 1rem;
+  background-color: white;
+  border-radius: 1.3rem;
+  height: 9rem;
+  width: 9rem;
+  box-shadow: 3px 6px 18px rgb(228, 228, 228);
+  border: rgb(238, 238, 238);
   text-align: center;
-  width: 34px;
+  justify-content: center;
+  font-size: 3rem;
+  color: skyblue;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
 }
 
-.square:focus {
-  outline: none;
+.square:active {
+  transform: translateY(5px);
+}
+
+.blueSign {
+  background: -webkit-linear-gradient(rgb(36, 213, 247), rgb(111, 36, 243));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+}
+
+.redSign {
+  background: -webkit-linear-gradient(rgb(255, 175, 179), rgb(255, 61, 157));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
 }
 
 .kbd-navigation .square:focus {
   background: #ddd;
 }
-
 .game {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .game-info {
   margin-left: 20px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 1rem auto;
+  text-align: center;
+  padding: 0.5rem 3rem;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(243, 243, 243, 0.2);
+  z-index: 111;
+  /* background: #e0e0e0; */
+}
+
+.modal {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  z-index: 1111;
+  width: 40rem;
+  height: 15rem;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.3rem;
+  text-align: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.modal h1 {
+  font-weight: 300;
+}
+
+.reset-btn.o-win,
+.reset-btn.x-win {
+  font-size: 2rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+  margin-top: 2rem;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+.reset-btn.o-win::after {
+  content: "";
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  background: -webkit-linear-gradient(rgb(255, 175, 179), rgb(255, 61, 157));
+  transition: 0.2s;
+}
+
+.reset-btn.x-win::after {
+  content: "";
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+  background: -webkit-linear-gradient(rgb(36, 213, 247), rgb(111, 36, 243));
+}
+
+.reset-btn:hover::after {
+  top: 0px;
+  left: 0px;
 }
