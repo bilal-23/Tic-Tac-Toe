@@ -42,12 +42,36 @@ $ npm install
 # Start development server
 $ npm start
 ```
+Once your server has started, go to this url `http://localhost:8080/` and you will see the website running on a Development Server:
+
+<h2 align="center">
+  <img src="https://github.com/bilal-23/Tic-Tac-Toe/blob/master/examples/example-1.jpg" alt="TicTacToe" width="100%">
+</h2>
+
+## Screenshots
+
+<h2 align="center">
+  <img src="https://github.com/bilal-23/Tic-Tac-Toe/blob/master/examples/example-2.jpg" alt="TicTacToe" width="100%">
+</h2>
+<h2 align="center">
+  <img src="https://github.com/bilal-23/Tic-Tac-Toe/blob/master/examples/example-3.jpg" alt="TicTacToe" width="100%">
+</h2>
+<h2 align="center">
+  <img src="https://github.com/bilal-23/Tic-Tac-Toe/blob/master/examples/example-4.jpg" alt="TicTacToe" width="100%">
+</h2>
+<h2 align="center">
+  <img src="https://github.com/bilal-23/Tic-Tac-Toe/blob/master/examples/example-5.jpg" alt="TicTacToe" width="100%">
+</h2>
 
 ## Technologies used 🛠️
 
 - [Webpack](https://webpack.js.org/concepts/) - Static module bundler
 - [ReactJS](https://reactjs.org) - Javascript library
 - CSS
+
+## Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/75600296-89eb-4640-9e7e-fa87fba7ce76/deploy-status)](https://app.netlify.com/sites/tictactoe23/deploys)
 
 ## Contributing
 
